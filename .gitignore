@@ -1,0 +1,14 @@
+node_modules/
+dist/
+artifacts/
+.env
+config/environments.local.json
+*.log
+test-results/
+.playwright/
+.venv/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc

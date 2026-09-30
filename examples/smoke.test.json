@@ -1,0 +1,21 @@
+{
+  "id": "mouse-smoke",
+  "name": "Kiểm thử nhanh chuột ảo (Smoke Test)",
+  "environment": "local",
+  "tags": ["smoke", "mouse"],
+  "safetyLevel": "read-only",
+  "productionAllowed": false,
+  "steps": [
+    { "action": "goto", "path": "/debug/mouse" },
+    { "action": "expectVisible", "target": { "strategy": "text", "text": "Ready" } },
+    { "action": "click", "target": { "strategy": "role", "role": "button", "name": "Click target" } },
+    { "action": "expectVisible", "target": { "strategy": "text", "text": "Clicked 1" } },
+    { "action": "doubleClick", "target": { "strategy": "testId", "testId": "double-target" } },
+    { "action": "expectVisible", "target": { "strategy": "text", "text": "Double clicked" } },
+    { "action": "rightClick", "target": { "strategy": "testId", "testId": "right-target" } },
+    { "action": "expectVisible", "target": { "strategy": "text", "text": "Right clicked" } },
+    { "action": "fill", "target": { "strategy": "label", "label": "Your name" }, "value": "Test visitor" },
+    { "action": "drag", "from": { "strategy": "testId", "testId": "drag-source" }, "to": { "strategy": "testId", "testId": "drop-zone" } },
+    { "action": "expectVisible", "target": { "strategy": "text", "text": "Dropped" } }
+  ]
+}

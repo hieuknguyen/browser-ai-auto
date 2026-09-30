@@ -1,0 +1,12 @@
+{
+  "id": "production-read-only",
+  "name": "Kiểm thử an toàn môi trường Production (mặc định tắt)",
+  "environment": "production",
+  "safetyLevel": "read-only",
+  "productionAllowed": true,
+  "testAccount": "replace-with-configured-dedicated-test-account",
+  "steps": [
+    { "action": "goto", "path": "/" },
+    { "action": "expectVisible", "target": { "strategy": "role", "role": "main" } }
+  ]
+}

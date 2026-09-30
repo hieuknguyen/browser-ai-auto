@@ -1,0 +1,14 @@
+services:
+  engine:
+    build: .
+    ports:
+      - "127.0.0.1:3210:3210"
+    shm_size: 1gb
+    init: true
+    environment:
+      ENGINE_CONCURRENCY: 4
+      ENGINE_PRODUCTION_ENABLED: "false"
+    volumes:
+      - engine-artifacts:/app/artifacts
+volumes:
+  engine-artifacts:

@@ -1,0 +1,24 @@
+[project]
+name = "vector-browser-engine"
+version = "2.0.0"
+description = "React workspace with a Python, Chrome and Gemini browser engine"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn[standard]>=0.34,<1", "playwright>=1.55,<2",
+  "google-genai>=1.40,<2", "pydantic>=2.11,<3", "python-dotenv>=1.1,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3,<10", "pytest-asyncio>=1.0,<2", "httpx>=0.28,<1", "ruff>=0.12,<1"]
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
